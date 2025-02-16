@@ -13,7 +13,11 @@
 </head>
 
 <body>
-    <div class="container">
+      <div id="loading-screen">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+    <div class="container"  id="main-content" class="hidden>
         <header>
             <nav class="navbar">
                 <div class="logo-container">
@@ -204,6 +208,13 @@
     </div>
 
     <script>
+        window.onload = function () {
+  // Hide the loading screen
+  document.getElementById('loading-screen').style.display = 'none';
+
+  // Show the main content
+  document.getElementById('main-content').classList.remove('hidden');
+};
         function scrollToMenu() {
             const menuSection = document.getElementById('menu-section');
             menuSection.scrollIntoView({
